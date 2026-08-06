@@ -16,17 +16,20 @@ Ace your SQL data interview with a battle-tested collection of scenario-based SQ
 
 ```
 .
-├── concepts/
 ├── scenarios/
 │   ├── easy/
 │   │   ├── 1 Major Cities/
 │   │   ├── 2 Not boring movies/
 │   │   ├── 3 Triangle Judgement/
-│   │   ├── 4 ......
+│   │   ├── 4 ......../
 │   ├── medium/
+│   │   ├── 1 ......../
+│   │   ├── 2 ......../
+│   │   ├── 3 ......../
 │   └── hard/
-├── setup/
-└── templates/
+│   │   ├── 1 ......../
+│   │   ├── 2 ......../
+│   │   ├── 3 ......../
 ```
 
 -   **`/scenarios`**: The core playbook, with problems categorized by difficulty.
