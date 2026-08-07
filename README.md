@@ -5,7 +5,7 @@ Ace your SQL data interview with a battle-tested collection of scenario-based SQ
 ## How to Use This Playbook
 
 1.  **Choose a Scenario**: Navigate to the `/scenarios` directory and pick a difficulty level (`easy`, `medium`, or `hard`).
-2.  **Understand the Problem**: Open the `Problem Statement.md` file inside a problem folder. It contains everything you need:
+2.  **Understand the Problem**: Open the `ProblemStatement.md` file inside a problem folder. It contains everything you need:
     *   The table schema.
     *   Example input data.
     *   The expected output.
@@ -16,20 +16,25 @@ Ace your SQL data interview with a battle-tested collection of scenario-based SQ
 
 ```
 .
-├── scenarios/
-│   ├── easy/
-│   │   ├── 1 Major Cities/
-│   │   ├── 2 Not boring movies/
-│   │   ├── 3 Triangle Judgement/
-│   │   ├── 4 ......../
-│   ├── medium/
-│   │   ├── 1 ......../
-│   │   ├── 2 ......../
-│   │   ├── 3 ......../
-│   └── hard/
-│   │   ├── 1 ......../
-│   │   ├── 2 ......../
-│   │   ├── 3 ......../
+└── scenarios/
+    ├── easy/
+    │   ├── 1 - Problem Name/
+    │   │   ├── ProblemStatement.md
+    │   │   └── Solution.sql
+    │   ├── 2 - Problem Name/
+    │   │   ├── ProblemStatement.md
+    │   │   └── Solution.sql
+    │   └── ...
+    ├── medium/
+    │   ├── 1 - Problem Name/
+    │   │   ├── ProblemStatement.md
+    │   │   └── Solution.sql
+    │   └── ...
+    └── hard/
+        ├── 1 - Problem Name/
+        │   ├── ProblemStatement.md
+        │   └── Solution.sql
+        └── ...
 ```
 
 -   **`/scenarios`**: The core playbook, with problems categorized by difficulty.
@@ -39,6 +44,6 @@ Ace your SQL data interview with a battle-tested collection of scenario-based SQ
 We welcome contributions! If you have a new SQL problem you'd like to add, please follow these steps:
 
 1.  **Create a New Folder**: Add a new folder inside the appropriate difficulty level (e.g., `/scenarios/easy/11 New Problem/`).
-2.  **Add a Problem Statement**: Create a `Problem Statement.md` file with the schema, example data, and expected output. Please follow the formatting of the existing problems.
+2.  **Add a Problem Statement**: Create a `ProblemStatement.md` file with the schema, example data, and expected output. Please follow the formatting of the existing problems.
 3.  **Add the Solution**: Create a `Solution.sql` file with a well-commented, formatted query that solves the problem.
 4.  **Submit a Pull Request**: Open a pull request with your changes.
