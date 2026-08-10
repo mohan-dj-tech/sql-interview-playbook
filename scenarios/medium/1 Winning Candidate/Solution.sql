@@ -7,8 +7,10 @@
  is used to be thorough, though an `INNER JOIN` would also work since every vote must
  have a valid candidate.
 */
-SELECT DISTINCT c.name FROM Candidate c
-LEFT JOIN Vote v ON c.id = v.candidateId
-GROUP BY c.name
-ORDER BY count(v.id) DESC
-LIMIT 1;
+SELECT DISTINCT name
+FROM   Candidate c
+       LEFT JOIN Vote v
+              ON v.candidateid = c.id
+GROUP  BY 1
+ORDER  BY Count(v.id) DESC
+LIMIT  1
