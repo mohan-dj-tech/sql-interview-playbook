@@ -8,13 +8,13 @@
  4.  **Final Selection**: The main `SELECT` then retrieves the distinct `id` of these active users and uses a correlated subquery to fetch their `name` from the `Accounts` table.
 */
 SELECT DISTINCT l1.id,
-                (SELECT name
-                 FROM   Accounts
+                (SELECT NAME
+                 FROM   accounts
                  WHERE  id = l1.id) AS NAME
-FROM   Logins l1
-       JOIN Logins l2
+FROM   logins l1
+       JOIN logins l2
          ON l1.id = l2.id
-            AND Datediff(l2.login_date, l1.login_date) BETWEEN 1 AND 4
+            AND datediff(l2.login_date, l1.login_date) BETWEEN 1 AND 4
 GROUP  BY l1.id,
           l1.login_date
-HAVING Count(DISTINCT l2.login_date) = 4
+HAVING Count(DISTINCT l2.login_date) = 4;
