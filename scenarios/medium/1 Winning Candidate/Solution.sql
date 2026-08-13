@@ -4,8 +4,7 @@
  tables on the candidate's `id`. It then groups the results by candidate `name` to
  count the votes for each one. The results are ordered in descending order based on
  the vote count, and `LIMIT 1` is used to select only the top candidate. A `LEFT JOIN`
- is used to be thorough, though an `INNER JOIN` would also work since every vote must
- have a valid candidate.
+ is used to be thorough, and `DISTINCT` is used on the final selection.
 */
 SELECT DISTINCT name
 FROM   Candidate c
@@ -13,4 +12,4 @@ FROM   Candidate c
               ON v.candidateid = c.id
 GROUP  BY 1
 ORDER  BY Count(v.id) DESC
-LIMIT  1
+LIMIT  1;
