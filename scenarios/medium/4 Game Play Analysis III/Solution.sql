@@ -1,15 +1,34 @@
 -- Problem: Game Play Analysis III
-/* Solution:
- To report the cumulative number of games each player has played up to each event date, we can utilize SQL's window functions. Specifically, the SUM() window function with appropriate partitioning and ordering allows us to calculate a running total (games_played_so_far) for each player across different dates.
 
- 1.  **Select Relevant Columns**: Retrieve player_id and event_date to identify each player's activity on specific dates.
- 2.  **Calculate Cumulative Games Played**: Use the SUM() window function to compute a running total of games_played for each player, ordered by event_date.
- 3.  **Order the Results**: Although not required, ordering the results by player_id and event_date can enhance readability.
+/*
+Solution:
+To report the cumulative number of games each player has played up to each event date, we can utilize SQL's window functions. Specifically, the SUM() window function with appropriate partitioning and ordering allows us to calculate a running total (games_played_so_far) for each player across different dates.
+
+1. **Select Relevant Columns**: Retrieve player_id and event_date to identify each player's activity on specific dates.
+2. **Calculate Cumulative Games Played**: Use the SUM() window function to compute a running total of games_played for each player, ordered by event_date.
+3. **Order the Results**: Although not required, ordering the results by player_id and event_date can enhance readability.
 */
-SELECT player_id,
-       event_date,
-       SUM(games_played) OVER (
-           PARTITION BY player_id
-           ORDER BY event_date
-       ) AS games_played_so_far
-FROM   Activity;
+
+-- Approach 1: Using Window Functions
+SELECT
+    player_id,
+    event_date,
+    SUM(games_played) OVER (PARTITION BY player_id ORDER BY event_date) AS games_played_so_far
+FROM
+    Activity;
+
+-- Approach 2: Using self join
+SELECT
+    a1.player_id,
+    a1.event_date,
+    SUM(a2.games_played) AS games_played_so_far
+FROM
+    Activity a1
+JOIN
+    Activity a2 ON a1.player_id = a2.player_id AND a1.event_date >= a2.event_date
+GROUP BY
+    a1.player_id,
+    a1.event_date
+ORDER BY
+    a1.player_id ASC,
+    a1.event_date ASC;
