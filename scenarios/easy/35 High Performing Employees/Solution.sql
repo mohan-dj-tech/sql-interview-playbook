@@ -1,5 +1,4 @@
 -- Problem: High Performing Employees
-
 /*
 Solution:
 To solve this problem, we need to identify employees in the Employee table who have a performance rating higher than 8. We will use SQL query to join the Employee table with the Performance table and filter the employees based on their performance rating.

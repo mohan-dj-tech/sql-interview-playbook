@@ -1,5 +1,4 @@
 -- Problem: Library Book Checkout Percentage
-
 /*
 Solution:
 To solve this problem, we need to calculate the unique number of patrons who have checked out each book and divide this by the total number of patrons in the library, then multiply by 100 to get the percentage.

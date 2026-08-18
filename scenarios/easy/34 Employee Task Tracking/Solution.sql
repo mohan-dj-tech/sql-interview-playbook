@@ -1,11 +1,14 @@
 -- Problem: Employee Task Tracking
-/* Solution:
- To find employees who completed tasks they assigned to themselves, this query filters
- the `TaskLog` table. The `WHERE` clause selects rows where the `employee_id` (the
- assigner) is the same as the `assignee_id` (the completer). `DISTINCT` is used to
- ensure that each employee ID is listed only once, even if they have completed
- multiple self-assigned tasks. The result is ordered by `employee_id`.
+/*
+Solution:
+To identify employees who have completed their own tasks, we need to examine records in the TaskLog table where the employee_id matches the assignee_id.
+
+1. Select Employee IDs: Begin with a SELECT statement to fetch all employees from the TaskLog table.
+2. Apply Conditions: Use a WHERE clause to filter employees who have completed tasks assigned by themselves.
+3. Sort the Results: Finally sort the results
 */
+
+-- SQL Query
 SELECT DISTINCT
     employee_id
 FROM

@@ -1,5 +1,4 @@
 -- Problem: Student Course Averages
-
 /*
 Solution:
 To solve this problem, we need to calculate the average grade obtained by each student in each course. We can achieve this using SQL queries to filter and aggregate the necessary data.
