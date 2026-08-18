@@ -1,10 +1,7 @@
 -- Problem: Sales Person
 /* Solution:
- To find the names of salespersons who had no orders with the company "RED", this
- query uses a subquery to first identify all `sales_id`s that *are* associated with
- "RED". The subquery joins the `Orders` and `Company` tables and filters for
- `c.name = 'RED'`. The main query then selects the names from the `SalesPerson`
- table where the `sales_id` is `NOT IN` the set of IDs returned by the subquery.
+In order to identify salespeople whose sales transactions are not linked to a company with the name 'RED,' we employ a structured SQL query on the "SalesPerson," "Orders," and "Company" tables.
+The query utilizes a subquery to exclude sales IDs associated with the specified company, and the final result comprises the names of salespeople meeting the defined criteria.
 */
 SELECT
     s.name

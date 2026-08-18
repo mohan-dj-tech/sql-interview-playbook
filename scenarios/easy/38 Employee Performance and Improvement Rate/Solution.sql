@@ -1,5 +1,4 @@
 -- Problem: Employee Performance and Improvement Rate
-
 /*
 Solution:
 To solve this problem, we need to calculate each employee's performance and improvement rate based on their evaluation scores across different rounds. The approach involves systematically breaking down the problem into manageable steps, utilizing SQL window functions and aggregation techniques to derive the required metrics.
