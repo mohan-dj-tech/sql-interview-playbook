@@ -22,6 +22,15 @@ The procedure should return the table after reorganizing it.
 Return the result table in any order.
 
 ## Example
+Products
+product_id	store	price
+1	Shop	110
+1	LC_Store	100
+2	Nozama	200
+2	Souq	190
+3	Souq	1000
+3	Souq	1900
+
 
 **Final Pivoted Output:**
 
